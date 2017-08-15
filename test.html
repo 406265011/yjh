@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .paw {
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input class="name" type="name" name="" placeholder="输入你的账号">
+    <input class="paw" type="password" placeholder="输入你的密码">
+
+
+
+    <script src="./jquery.min.js"></script>
+    <script src="./common.js"></script>
+    <script>
+        $(function () {
+            // 账号
+            $('.name').blur(function () {
+                if (getphone('.name')) {
+                    getPrompt("手机符合");
+                    console.log("可以")
+                } else {
+                    getPrompt("手机长度不符合")
+                    console.log("不可以")
+                }
+            })
+
+
+
+            // 密码
+            // $('.paw').bind('input propertychange', function () { //监听input，只要input发生变化时，就会马上触发该事件，
+            $('.paw').blur(function () {
+                if (getpasw('.paw')) {
+                    getPrompt("密码登录成功");
+                    console.log('对');
+                } else {
+                    getPrompt("密码失败");
+                    console.log('错');
+                }
+
+            });
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
